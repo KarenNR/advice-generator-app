@@ -1,37 +1,13 @@
 <script setup>
-  import AdviceComponent from './components/AdviceComponent.vue';
+    import AdviceComponent from './components/AdviceComponent.vue';
+    import AttributionComponent from './components/AttributionComponent.vue';
 </script>
 
 <template>
     <div class="container">
         <AdviceComponent />
+        <AttributionComponent />
     </div> 
-  <!--
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Advice generator app</title>
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Advice #
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
-</html>
-  -->
 </template>
 
 <style scoped>
@@ -39,6 +15,7 @@
         height: 100vh;
         background-color: hsl(218, 23%, 16%);
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
     }

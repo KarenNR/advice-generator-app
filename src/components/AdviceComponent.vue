@@ -10,7 +10,7 @@ let loading = ref(false);
 async function getAdvice() {
     loading.value = true;
     // Get content from API
-    let res = await fetch("/api/advice", {
+    let res = await fetch(`${process.env.VUE_APP_API_URL}/advice`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

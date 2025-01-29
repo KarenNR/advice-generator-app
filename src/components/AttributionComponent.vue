@@ -14,7 +14,7 @@
         font-size: 11px; 
         text-align: center; 
         position: absolute; 
-        padding: 10px 0;
+        top: 90%;
         color: #FFFFFF;
         font-weight: 400;
     }

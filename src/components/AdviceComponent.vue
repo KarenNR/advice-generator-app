@@ -1,12 +1,15 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 
+/* ADVICE GENERATOR */
+
 let adviceId = ref(0);
 let advice = ref("");
 let loading = ref(false);
 
 async function getAdvice() {
     loading.value = true;
+    // Get content from API
     let res = await fetch("/api/advice", {
         method: "GET",
         headers: {
@@ -16,10 +19,26 @@ async function getAdvice() {
         cache: "no-cache"
     });
     let data = await res.json();
+    // Update content in component
     adviceId.value = data.slip.id;
     advice.value = data.slip.advice;
     loading.value = false;
 }
+
+/* DISPLAY IMAGE BASED ON CONTENT */
+
+let imageSRC = ref("/images/pattern-divider-desktop.svg");
+var media = window.matchMedia("(max-width: 767.98px)")
+
+media.addEventListener("change", function() {
+    if (media.matches) {
+        imageSRC.value = "/images/pattern-divider-mobile.svg";
+    } else {
+        imageSRC.value = "/images/pattern-divider-desktop.svg";
+    }
+});
+
+/* GET ADVICE WHEN COMPONENT IS RENDERED */
 
 onMounted(async () => {
     await getAdvice();
@@ -32,7 +51,7 @@ onMounted(async () => {
         <p>
             "{{ advice }}"
         </p>
-        <img alt="divider" src="/images/pattern-divider-desktop.svg" class="divider"><br> 
+        <img alt="divider" :src="imageSRC" class="divider"><br> 
         <button @click="getAdvice()" :disabled="loading">
             <template v-if="loading">
                 <div class="loader"></div>

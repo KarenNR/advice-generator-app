@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <div class="container"></div> 
-    <AdviceComponent />
-  Advice
+    <div class="container">
+        <AdviceComponent />
+    </div> 
   <!--
   <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +37,9 @@
 <style scoped>
     .container {
         height: 100vh;
-        background-color: red;
+        background-color: hsl(218, 23%, 16%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>

@@ -8,9 +8,9 @@ let advice = ref("");
 let loading = ref(false);
 
 async function getAdvice() {
-    /*loading.value = true;
+    loading.value = true;
     // Get content from API
-    let res = await fetch(`${process.env.VUE_APP_API_URL}/advice`, {
+    let res = await fetch("https://api.adviceslip.com/advice", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -22,7 +22,7 @@ async function getAdvice() {
     // Update content in component
     adviceId.value = data.slip.id;
     advice.value = data.slip.advice;
-    loading.value = false;*/
+    loading.value = false;
 }
 
 /* DISPLAY IMAGE BASED ON CONTENT */

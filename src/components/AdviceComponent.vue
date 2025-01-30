@@ -12,10 +12,7 @@ async function getAdvice() {
     // Get content from API
     let res = await fetch(`${process.env.VUE_APP_API_URL}/advice`, {
         method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        },
+        mode: "no-cors",
         cache: "no-cache"
     });
     let data = await res.json();

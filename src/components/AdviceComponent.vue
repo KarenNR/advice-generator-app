@@ -37,7 +37,8 @@ media.addEventListener("change", function() {
 /* GET ADVICE WHEN COMPONENT IS RENDERED */
 
 onMounted(async () => {
-    await getAdvice();
+    adviceId.value = 117;
+    advice.value = "A common regret in life is wishing one hadn't worked so hard.";
 });
 </script>
 

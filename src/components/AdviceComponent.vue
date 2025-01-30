@@ -38,7 +38,7 @@ media.addEventListener("change", function() {
 
 onMounted(async () => {
     adviceId.value = 117;
-    advice.value = "A common regret in life is wishing one hadn't worked so hard.";
+    advice.value = "It is easy to sit up and take notice, what's difficult is getting up and taking action";
 });
 </script>
 
